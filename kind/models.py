@@ -10,6 +10,7 @@ class Kind(models.Model):
         Category,
         on_delete=models.CASCADE
     )
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return f"{self.id}: {self.title}: {self.category.id}"

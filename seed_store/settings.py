@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'frontend.apps.FrontendConfig',
     'kind.apps.KindConfig',
     'category.apps.CategoryConfig',
-    'base.apps.BaseConfig'
+    'base.apps.BaseConfig',
+    'character.apps.CharacterConfig'
 ]
 
 MIDDLEWARE = [

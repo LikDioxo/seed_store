@@ -3,4 +3,3 @@ from .models import Kind
 
 
 admin.site.register(Kind)
-# Register your models here.

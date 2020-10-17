@@ -8,6 +8,10 @@ from character.models import Character
 from utils.validators.grade_number_validator import grade_number_validator
 
 
+class Image(models.Model):
+    image = models.ImageField(upload_to="grade_images")
+
+
 class Grade(models.Model):
     grade_number = models.CharField(
         max_length=12,
@@ -30,7 +34,15 @@ class Grade(models.Model):
     )
     planting_method = models.TextField()
     care = models.TextField()
-    image = models.ImageField(blank=True)
+    price = models.DecimalField(
+        decimal_places=2,
+        max_digits=9
+    )
+    images = models.ForeignKey(
+        Image,
+        on_delete=models.CASCADE,
+        blank=True
+    )
 
     def __str__(self):
         return f"{self.id}: {self.grade_number}: {self.name}: {self.characters}"

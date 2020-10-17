@@ -5,8 +5,8 @@ class Category(models.Model):
     title = models.CharField(
         max_length=50
     )
-    image = models.ImageField(blank=True)
+    image = models.ImageField(blank=True, upload_to='category_images')
 
     def __str__(self):
-        return f"{self.id}: {self.title}"
+        return f"{self.title}"
 

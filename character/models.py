@@ -12,14 +12,14 @@ class Character(models.Model):
         ('Июнь', 'Июнь'),
         ('Июль', 'Июль'),
         ('Август', 'Август'),
-        ('Сеньтябрь', 'Сеньтябрь'),
+        ('Сентябрь', 'Сентябрь'),
         ('Октябрь', 'Октябрь'),
         ('Ноябрь', 'Ноябрь'),
         ('Декабрь', 'Декабрь'),
     ]
 
     watering_conditions_choices = [
-        ('Поверхносное орошение', 'Поверхносное орошение'),
+        ('Поверхностное орошение', 'Поверхностное орошение'),
         ('Капельное орошение', 'Капельное орошение'),
         ('Дождевание', 'Дождевание'),
         ('Подпочвенное орошение', 'Подпочвенное орошение'),
@@ -32,13 +32,13 @@ class Character(models.Model):
         ('Споры', 'Споры'),
     ]
 
-    planting_depth = models.PositiveSmallIntegerField()  # Глубина посадки
-    distance = models.PositiveSmallIntegerField()  # Растояние в радиусе от других растений и построек
+    planting_depth = models.PositiveSmallIntegerField()
+    distance = models.PositiveSmallIntegerField()
     plant_height = models.PositiveSmallIntegerField()
     leaves_color = models.CharField(max_length=40)
     product_type = models.CharField(max_length=8, choices=product_type_choices)
     soil_moisture = models.PositiveSmallIntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
-    watering_conditions = models.CharField(max_length=21, choices=watering_conditions_choices)
+    watering_conditions = models.CharField(max_length=22, choices=watering_conditions_choices)
     fruit_size = models.PositiveSmallIntegerField()
     adaptation = models.BooleanField()
     frost_resistance = models.BooleanField()

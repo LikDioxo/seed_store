@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import Grade, Character
+from .models import Grade
 
 
 admin.site.register(Grade)
-admin.site.register(Character)
